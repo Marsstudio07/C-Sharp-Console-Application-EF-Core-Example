@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace EFCoreProject.Model
@@ -11,6 +12,8 @@ namespace EFCoreProject.Model
     {
         public DbSet<Team> teams { set; get; }
         public DbSet<Player> players { set; get; }
+        public DbSet<HomeAddress> homeAddresses { set; get; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=.;Database=SchoolDb;Trusted_Connection=True;");
@@ -21,24 +24,37 @@ namespace EFCoreProject.Model
     {
         [Key]
         [Required]
-        public int id { set; get; }
+        public int Id { set; get; }
 
         [Required(ErrorMessage = "name is required")]
         [MaxLength(20,ErrorMessage = "name is too long")]
-        public string name { set; get; }
+        public string Name { set; get; }
 
-        public List<Player> players { set; get; }
+        public List<Player> Players { set; get; }
     }
     //entity class Player
     public class Player 
     {
         [Key]
         [Required]
-        public int id { set; get; }
+        public int Id { set; get; }
 
         [Required(ErrorMessage = "name is required")]
         [MaxLength(20, ErrorMessage = "name is too long")]
-        public string name { set; get; }
+        public string Name { set; get; }
 
+        public List<HomeAddress> Addresses { set; get; }
+    }
+    public class HomeAddress 
+    { 
+        [Key]
+        [Required]
+        public int Id { set; get; }
+
+        [MaxLength(15, ErrorMessage = "telephone is too long")]
+        public string Telephone { set; get; }
+
+        [MaxLength(20, ErrorMessage = "location is too long")]
+        public string Location { set; get; }
     }
 }

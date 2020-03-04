@@ -19,41 +19,61 @@ namespace EFCoreProject.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("EFCoreProject.Model.Player", b =>
+            modelBuilder.Entity("EFCoreProject.Model.HomeAddress", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("Teamid")
-                        .HasColumnType("int");
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
-                    b.Property<string>("name")
+                    b.Property<string>("Telephone")
+                        .HasColumnType("nvarchar(15)")
+                        .HasMaxLength(15);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("homeAddresses");
+                });
+
+            modelBuilder.Entity("EFCoreProject.Model.Player", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.HasKey("id");
+                    b.Property<int?>("TeamId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("Teamid");
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeamId");
 
                     b.ToTable("players");
                 });
 
             modelBuilder.Entity("EFCoreProject.Model.Team", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("name")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("teams");
                 });
@@ -61,8 +81,8 @@ namespace EFCoreProject.Migrations
             modelBuilder.Entity("EFCoreProject.Model.Player", b =>
                 {
                     b.HasOne("EFCoreProject.Model.Team", null)
-                        .WithMany("players")
-                        .HasForeignKey("Teamid");
+                        .WithMany("Players")
+                        .HasForeignKey("TeamId");
                 });
 #pragma warning restore 612, 618
         }

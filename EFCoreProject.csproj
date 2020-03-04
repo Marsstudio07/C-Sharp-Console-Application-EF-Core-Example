@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +16,28 @@
     <Compile Remove="Migrations\20200224142224_addSchoolDb.Designer.cs" />
     <Compile Remove="Migrations\20200224142342_CreateSchoolDB.cs" />
     <Compile Remove="Migrations\20200224142342_CreateSchoolDB.Designer.cs" />
+    <Compile Remove="Migrations\20200304133516_addTableAddress.cs" />
+    <Compile Remove="Migrations\20200304133516_addTableAddress.Designer.cs" />
+    <Compile Remove="Migrations\20200304133541_addTableAddress.cs" />
+    <Compile Remove="Migrations\20200304133541_addTableAddress.Designer.cs" />
+    <Compile Remove="Migrations\20200304133813_addTableAddress.cs" />
+    <Compile Remove="Migrations\20200304133813_addTableAddress.Designer.cs" />
+    <Compile Remove="Migrations\20200304134138_createdabaseSchoolDb.cs" />
+    <Compile Remove="Migrations\20200304134138_createdabaseSchoolDb.Designer.cs" />
+    <Compile Remove="Migrations\20200304134222_createdabaseSchoolDb.cs" />
+    <Compile Remove="Migrations\20200304134222_createdabaseSchoolDb.Designer.cs" />
+    <Compile Remove="Migrations\20200304134409_createDabaseSchoolDb.cs" />
+    <Compile Remove="Migrations\20200304134409_createDabaseSchoolDb.Designer.cs" />
+    <Compile Remove="Migrations\20200304140304_addTableAddress.cs" />
+    <Compile Remove="Migrations\20200304140304_addTableAddress.Designer.cs" />
+    <Compile Remove="Migrations\20200304140452_updateAddressTable.cs" />
+    <Compile Remove="Migrations\20200304140452_updateAddressTable.Designer.cs" />
+    <Compile Remove="Migrations\20200304153621_CreateSchoolDb.cs" />
+    <Compile Remove="Migrations\20200304153621_CreateSchoolDb.Designer.cs" />
+    <Compile Remove="Migrations\20200304153855_CreateSchoolDb.cs" />
+    <Compile Remove="Migrations\20200304153855_CreateSchoolDb.Designer.cs" />
+    <Compile Remove="Migrations\20200304154039_CreateSchoolDb.cs" />
+    <Compile Remove="Migrations\20200304154039_CreateSchoolDb.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
