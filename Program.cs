@@ -11,7 +11,9 @@ namespace EFCoreProject
     {
         static async Task Main(string[] args)
         {
-            await new EagerLoading().load();
+            //eager loading
+            //await new EagerLoading().load();
+            await new ExplicitLoading().load();
         }
     }
 }
