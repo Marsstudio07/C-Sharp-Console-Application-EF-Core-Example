@@ -12,11 +12,13 @@ namespace EFCoreProject.Model
     {
         public DbSet<Team> teams { set; get; }
         public DbSet<Player> players { set; get; }
-        public DbSet<HomeAddress> homeAddresses { set; get; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.;Database=SchoolDb;Trusted_Connection=True;");
+            //use lazyLoadingProxies to enable lazy loading
+            optionsBuilder.
+                UseLazyLoadingProxies().
+                UseSqlServer("Server=.;Database=SchoolDb;Trusted_Connection=True;");
         }
     }
     //entity class Team
@@ -30,7 +32,7 @@ namespace EFCoreProject.Model
         [MaxLength(20,ErrorMessage = "name is too long")]
         public string Name { set; get; }
 
-        public List<Player> Players { set; get; }
+        public virtual List<Player> Players { set; get; }
     }
     //entity class Player
     public class Player 
@@ -43,7 +45,7 @@ namespace EFCoreProject.Model
         [MaxLength(20, ErrorMessage = "name is too long")]
         public string Name { set; get; }
 
-        public List<HomeAddress> Addresses { set; get; }
+        public virtual List<HomeAddress> Addresses { set; get; }
     }
     public class HomeAddress 
     { 

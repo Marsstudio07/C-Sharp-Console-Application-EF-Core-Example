@@ -9,11 +9,12 @@ namespace EFCoreProject
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             //eager loading
             //await new EagerLoading().load();
-            await new ExplicitLoading().load();
+            //await new ExplicitLoading().load();
+            new LazyLoading().load();
         }
     }
 }

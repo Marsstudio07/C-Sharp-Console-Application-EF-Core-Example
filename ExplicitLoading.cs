@@ -19,7 +19,6 @@ namespace EFCoreProject
         {
             using (var context = new SchoolContext())
             {
-
                 var lake_team =  await context.teams.Where(t => t.Name == "lake").FirstOrDefaultAsync();
 
                 //The lake.Players is a collection navigation property, which using the Collection method.
