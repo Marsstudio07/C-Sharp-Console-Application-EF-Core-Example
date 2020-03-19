@@ -23,3 +23,6 @@ This project is built to demonstrating how to use EF(Entity Framework) Core. Eac
 - **EF Core Explicit Loading**
   - [blog](https://voltwu.github.io/blog/csharp/2020/03/06/EF-Core-Explicit-Loading/)
   - [repository](https://github.com/voltwu/C-Sharp-Console-Application-EF-Core-Example/tree/921b247932ec61bf7a10d4392413e4f377652c97)
+- **EF Core Lazy Loading**
+  - [blog](https://voltwu.github.io/blog/csharp/2020/03/19/EF-Core-Lazy-Loading/)
+  - [repository](https://github.com/voltwu/C-Sharp-Console-Application-EF-Core-Example/tree/e889e3cfebe34bf823b0a69e942a629491611fde)
